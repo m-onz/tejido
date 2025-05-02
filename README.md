@@ -1,16 +1,16 @@
 # Tajido
 
-Tajido is an audio visual live coding system.
+Tajido is an audio visual live coding system. Tejido means "fabric" in spanish.
 
 ## Prior art
 
-This will develop on the ideas of mixtape where complex pattern syntax is turned into a simple "tape":
+This will develop on the ideas of [mixtape](https://github.com/m-onz/mixtape) where complex pattern syntax is turned into a simple "tape":
 
 Consisting of hyphens for rests and numbers to be mapped to parameters or musical notes.
 
 > "- - - - 3 - - - 4 - - 5"
 
-A sequence object steps through this tape at any metro resolution.
+A sequence object steps through this tape at any timing/metro resolution.
 
 Its an incredibly simple algorithmic composition paradgym capable of creating complex output.
 
