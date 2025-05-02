@@ -1,6 +1,25 @@
 # Tajido
 
-Tajido is a live coding pattern parser for Elixir, designed for music and algorithmic composition. It can be used with MIDI, OSC, or any other output mechanism for live performances.
+Tajido is an audio visual live coding system.
+
+## Prior art
+
+This will develop on the ideas of mixtape where complex pattern syntax is turned into a simple "tape":
+
+Consisting of hyphens for rests and numbers to be mapped to parameters or musical notes.
+
+> "- - - - 3 - - - 4 - - 5"
+
+A sequence object steps through this tape at any metro resolution.
+
+Its an incredibly simple algorithmic composition paradgym capable of creating complex output.
+
+## Roadmap
+
+* pattern parser for Elixir [x]
+* elixir repl and udpsend [ ]
+* pure data & GEM system [ ]
+* integration with agent systems [ ]
 
 ## Features
 
