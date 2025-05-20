@@ -1,0 +1,15 @@
+#N canvas 400 200 650 450 10;
+#X obj 100 50 netreceive 7000 1;
+#X obj 100 100 print received;
+#X obj 100 150 route kick bass melody;
+#X obj 100 200 print kick;
+#X obj 250 200 print bass;
+#X obj 400 200 print melody;
+#X text 50 10 Tejido Pattern Receiver;
+#X text 50 350 Connect this to your sequencer or samplers;
+#X text 50 370 Each pattern is sent as "instrument pattern";
+#X connect 0 0 1 0;
+#X connect 0 0 2 0;
+#X connect 2 0 3 0;
+#X connect 2 1 4 0;
+#X connect 2 2 5 0;

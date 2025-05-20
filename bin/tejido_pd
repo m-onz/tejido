@@ -1,0 +1,39 @@
+#!/usr/bin/env elixir
+
+Code.prepend_path("#{__DIR__}/../_build/dev/lib/tejido/ebin")
+
+defmodule TejidoPDCLI do
+  @moduledoc """
+  Command line interface for Tejido Pattern Generator for Pure Data.
+  """
+
+  def main(args) do
+    # Ensure the Tejido application is loaded
+    Application.put_env(:elixir, :ansi_enabled, true)
+    {:ok, _} = Application.ensure_all_started(:tejido)
+
+    # Parse command line arguments
+    case args do
+      ["--send", pattern, port] ->
+        Tejido.PDSender.send_pattern(pattern, String.to_integer(port))
+
+      ["--send", pattern] ->
+        Tejido.PDSender.send_pattern(pattern)
+
+      [port] ->
+        Tejido.PDSender.start(String.to_integer(port))
+
+      [] ->
+        Tejido.PDSender.start()
+
+      _ ->
+        IO.puts("""
+        Usage:
+          ./tejido_pd [PORT]                    # Start interactive mode
+          ./tejido_pd --send "PATTERN" [PORT]   # Send a single pattern
+        """)
+    end
+  end
+end
+
+TejidoPDCLI.main(System.argv())
